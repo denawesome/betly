@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TournametsController extends Controller
+class TournamentsController extends Controller
 {
-    //
+    public function getTournamentsById()
+    {
+        return 1;
+    }
 }
