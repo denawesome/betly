@@ -12,13 +12,16 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
 Auth::routes();
 
-Route::get('/games', 'GamesController@index')->name('games');
+Route::get('/{game_type}', 'GameController@game_type')->name('game_type');
 
-Route::get('/games/{game}', 'GamesController@single')->name('games');
+Route::get('/games', 'GameController@index')->name('games');
+
+Route::get('/games/{game}', 'GameController@single')->name('games');
 
 Route::get('/games/{game}/tournaments', function() {
     return view('games.tournaments.index');
